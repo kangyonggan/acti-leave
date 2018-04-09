@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.zip.ZipInputStream;
 
 /**
  * @author kangyonggan
@@ -49,8 +50,12 @@ public class MyTest {
     public void deploy() {
         // 创建一个部署构建器对象，用于加载流程定义文件(bpmn文件和png文件)
         DeploymentBuilder deploymentBuilder = processEngine.getRepositoryService().createDeployment();
-        deploymentBuilder.addClasspathResource("leave.bpmn");
-        deploymentBuilder.addClasspathResource("leave.png");
+//        deploymentBuilder.addClasspathResource("leave.bpmn");
+//        deploymentBuilder.addClasspathResource("leave.png");
+        ZipInputStream zipInputStream = new ZipInputStream(this.getClass()
+                .getClassLoader().getResourceAsStream("leave.zip"));
+        deploymentBuilder.addZipInputStream(zipInputStream);
+
         // 部署，并返回一个部署对象
         Deployment deployment = deploymentBuilder.deploy();
         System.out.println(deployment.getId());
@@ -121,7 +126,7 @@ public class MyTest {
         // 任务的id
         String taskId = "5002";
         processEngine.getTaskService().complete(taskId);
-        System.out.println("办理任务2505");
+        System.out.println("办理任务5002");
     }
 
 }

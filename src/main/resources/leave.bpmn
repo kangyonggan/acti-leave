@@ -3,8 +3,8 @@
   <process id="leave_process" isClosed="false" isExecutable="true" name="请假流程" processType="None">
     <startEvent id="_2" name="开始"/>
     <endEvent id="_3" name="结束"/>
-    <userTask activiti:assignee="ADMIN" activiti:exclusive="true" id="_4" name="填写请假信息"/>
-    <userTask activiti:exclusive="true" id="_5" name="领导审核"/>
+    <userTask activiti:assignee="USER" activiti:exclusive="true" id="_4" name="填写请假信息"/>
+    <userTask activiti:assignee="ADMIN" activiti:exclusive="true" id="_5" name="领导审核"/>
     <sequenceFlow id="_6" sourceRef="_2" targetRef="_4"/>
     <sequenceFlow id="_7" sourceRef="_4" targetRef="_5"/>
     <sequenceFlow id="_8" sourceRef="_5" targetRef="_3"/>
