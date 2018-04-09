@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kangyonggan</groupId>
+    <artifactId>acti-leave</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>Module Leave</name>
+    <description>请假流程</description>
+
+    <properties>
+        <!--Project-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--Plugins-->
+        <plugin.compiler.version>3.2</plugin.compiler.version>
+        <plugin.compiler.level>1.8</plugin.compiler.level>
+
+        <!--activiti-->
+        <activiti.version>6.0.0</activiti.version>
+
+        <!--other-->
+        <junit.version>4.11</junit.version>
+        <mysql.version>5.1.34</mysql.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <!--compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${plugin.compiler.version}</version>
+                <configuration>
+                    <source>${plugin.compiler.level}</source>
+                    <target>${plugin.compiler.level}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-engine</artifactId>
+            <version>${activiti.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring</artifactId>
+            <version>${activiti.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
